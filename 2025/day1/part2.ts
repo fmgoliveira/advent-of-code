@@ -10,7 +10,7 @@ const readInstructions = (filePath: string): string[] => {
   return data.split("\n").filter((line: string) => line.trim() !== "");
 };
 
-const instructions = readInstructions("data.txt");
+const instructions = readInstructions("day1/data.txt");
 
 let currentPosition = START_POSITION;
 let zeroCount = 0;

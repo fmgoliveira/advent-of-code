@@ -17,7 +17,7 @@ const getSpinnerPosition = (position: number, instruction: string): number => {
   return (position + steps + SPINNER_SIZE) % SPINNER_SIZE;
 };
 
-const instructions = readInstructions("data.txt");
+const instructions = readInstructions("day1/data.txt");
 
 let currentPosition = START_POSITION;
 let zeroCount = 0;
