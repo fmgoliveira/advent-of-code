@@ -15,19 +15,8 @@ const isValidId = (id: string) => {
   for (let len = 1; len <= Math.floor(id.length / 2); len++) {
     if (id.length % len !== 0) continue;
 
-    const parts = new Array(id.length / len).fill(0);
-    for (let i = 0; i < parts.length; i++) {
-      parts[i] = id.slice(i * len, (i + 1) * len);
-    }
-
-    let allEqual = true;
-    let i = 1;
-    while (i < parts.length && allEqual) {
-      allEqual = parts[i] === parts[0];
-      i++;
-    }
-
-    if (allEqual) return false;
+    if (id.slice(0, len).repeat(id.length / len) === id)
+      return false;
   }
 
   return true;
